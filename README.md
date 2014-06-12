@@ -18,8 +18,17 @@ linuxDistro(function (err, data) {
         throw err
     }
 
+    console.log(data.distributorId);
+    // => Ubuntu
+
     console.log(data.description);
     // => Ubuntu 14.04 LTS
+
+    console.log(data.release);
+    // => 14.04
+
+    console.log(data.codename);
+    // => trusty
 });
 ```
 
