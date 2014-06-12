@@ -1,0 +1,32 @@
+{
+  "name": "linux-distro",
+  "version": "0.1.0",
+  "description": "Get the current Linux distro",
+  "license": "MIT",
+  "repository": "kevva/linux-distro",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter list"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "distro",
+    "linux",
+    "version"
+  ],
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  },
+  "dependencies": {
+    "underscore.string": "^2.3.3"
+  }
+}
