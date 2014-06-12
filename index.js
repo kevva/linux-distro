@@ -20,7 +20,7 @@ module.exports = function (cb) {
 
         stdout = stdout.replace(/\t/g, '').replace(/\r?\n?[^\r\n]*$/g, '').split('\n');
         stdout.forEach(function (s) {
-            s = s.split(':');
+            s = s.split(/:(.+)?/);
             s[0] = s[0].toLowerCase();
             obj[camelize(s[0])] = s[1];
         });
