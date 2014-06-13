@@ -18,18 +18,32 @@ linuxDistro(function (err, data) {
         throw err
     }
 
-    console.log(data.distributorId);
+    console.log(data.os);
     // => Ubuntu
 
-    console.log(data.description);
+    console.log(data.name);
     // => Ubuntu 14.04 LTS
 
     console.log(data.release);
     // => 14.04
 
-    console.log(data.codename);
+    console.log(data.code);
     // => trusty
 });
+```
+
+## CLI
+
+```bash
+$ npm install --global linux-distro
+```
+
+```sh
+$ linux-distro --help
+
+Example
+  $ linux-distro
+  Ubuntu 14.04 LTS (trusty)
 ```
 
 ## License

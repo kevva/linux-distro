@@ -8,10 +8,10 @@ describe('linuxDistro()', function () {
     it('should get the current Linux distro', function (cb) {
         linuxDistro(function (err, data) {
             assert(!err);
-            assert(data.distributorId);
-            assert(data.description);
+            assert(data.os);
+            assert(data.name);
             assert(data.release);
-            assert(data.codename);
+            assert(data.code);
             cb();
         });
     });

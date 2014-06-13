@@ -11,19 +11,19 @@ var execFile = require('child_process').execFile;
  */
 
 module.exports = function (cb) {
-    execFile('lsb_release', ['-a'], function (err, stdout) {
+    execFile('lsb_release', ['-a', '--short'], function (err, stdout) {
         var obj = {};
 
         if (err) {
             return cb(err);
         }
 
-        stdout = stdout.replace(/\t/g, '').replace(/\r?\n?[^\r\n]*$/g, '').split('\n');
-        stdout.forEach(function (s) {
-            s = s.split(/:(.+)?/);
-            s[0] = s[0].toLowerCase();
-            obj[camelize(s[0])] = s[1];
-        });
+        stdout = stdout.split('\n');
+
+        obj.os = stdout[0];
+        obj.name = stdout[1];
+        obj.release = stdout[2];
+        obj.code = stdout[3];
 
         cb(null, obj);
     });
