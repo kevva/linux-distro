@@ -15,7 +15,7 @@ var linuxDistro = require('linux-distro');
 
 linuxDistro(function (err, data) {
     if (err) {
-        throw err
+        throw err;
     }
 
     console.log(data.os);
