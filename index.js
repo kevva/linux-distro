@@ -1,6 +1,5 @@
 'use strict';
 
-var camelize = require('underscore.string').camelize;
 var getos = require('getos');
 var execFile = require('child_process').execFile;
 
@@ -18,7 +17,8 @@ module.exports = function (cb) {
         if (err) {
             getos(function (err, res) {
                 if (err) {
-                    return cb(err);
+                    cb(err);
+                    return;
                 }
 
                 cb(null, { os: res });

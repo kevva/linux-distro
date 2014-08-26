@@ -4,7 +4,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save linux-distro
 ```
 
@@ -19,22 +19,22 @@ linuxDistro(function (err, data) {
     }
 
     console.log(data.os);
-    // => Ubuntu
+    //=> Ubuntu
 
     console.log(data.name);
-    // => Ubuntu 14.04 LTS
+    //=> Ubuntu 14.04 LTS
 
     console.log(data.release);
-    // => 14.04
+    //=> 14.04
 
     console.log(data.code);
-    // => trusty
+    //=> trusty
 });
 ```
 
 ## CLI
 
-```bash
+```sh
 $ npm install --global linux-distro
 ```
 

@@ -28,8 +28,7 @@
     "version"
   ],
   "dependencies": {
-    "getos": "^0.2.1",
-    "underscore.string": "^2.3.3"
+    "getos": "^0.2.1"
   },
   "devDependencies": {
     "mocha": "^1.18.2"
