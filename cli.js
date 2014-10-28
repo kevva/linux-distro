@@ -2,37 +2,22 @@
 'use strict';
 
 var linuxDistro = require('./');
-var pkg = require('./package.json');
+var meow = require('meow');
 
 /**
- * Help screen
+ * Initialize CLI
  */
 
-function help() {
-    console.log(pkg.description);
-    console.log('');
-    console.log('Example');
-    console.log('  $ linux-distro');
-    console.log('  Ubuntu 14.04 LTS (trusty)');
-}
-
-/**
- * Show help
- */
-
-if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
-    help();
-    return;
-}
-
-/**
- * Show package version
- */
-
-if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -1) {
-    console.log(pkg.version);
-    return;
-}
+meow({
+    help: [
+        'Usage',
+        '  linux-distro',
+        '',
+        'Example',
+        '  linux-distro',
+        '  Ubuntu 14.04 LTS (trusty)'
+    ].join('\n')
+});
 
 /**
  * Run
