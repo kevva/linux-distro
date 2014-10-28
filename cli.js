@@ -9,14 +9,14 @@ var meow = require('meow');
  */
 
 meow({
-    help: [
-        'Usage',
-        '  linux-distro',
-        '',
-        'Example',
-        '  linux-distro',
-        '  Ubuntu 14.04 LTS (trusty)'
-    ].join('\n')
+	help: [
+		'Usage',
+		'  linux-distro',
+		'',
+		'Example',
+		'  linux-distro',
+		'  Ubuntu 14.04 LTS (trusty)'
+	].join('\n')
 });
 
 /**
@@ -24,10 +24,10 @@ meow({
  */
 
 linuxDistro(function (err, data) {
-    if (err) {
-        console.error(err.message);
-        process.exit(1);
-    }
+	if (err) {
+		console.error(err.message);
+		process.exit(1);
+	}
 
-    console.log(data.name + ' (' + data.code + ')');
+	console.log(data.name + ' (' + data.code + ')');
 });

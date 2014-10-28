@@ -14,21 +14,21 @@ $ npm install --save linux-distro
 var linuxDistro = require('linux-distro');
 
 linuxDistro(function (err, data) {
-    if (err) {
-        throw err;
-    }
+	if (err) {
+		throw err;
+	}
 
-    console.log(data.os);
-    //=> Ubuntu
+	console.log(data.os);
+	//=> Ubuntu
 
-    console.log(data.name);
-    //=> Ubuntu 14.04 LTS
+	console.log(data.name);
+	//=> Ubuntu 14.04 LTS
 
-    console.log(data.release);
-    //=> 14.04
+	console.log(data.release);
+	//=> 14.04
 
-    console.log(data.code);
-    //=> trusty
+	console.log(data.code);
+	//=> trusty
 });
 ```
 
