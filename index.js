@@ -12,8 +12,7 @@ var execFile = require('child_process').execFile;
 
 module.exports = function (cb) {
 	if (process.platform !== 'linux') {
-		cb(new Error('Only Linux systems are supported'));
-		return;
+		throw new Error('Only Linux systems are supported');
 	}
 
 	execFile('lsb_release', ['-a', '--short'], function (err, stdout) {
