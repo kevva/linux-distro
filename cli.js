@@ -4,10 +4,6 @@
 var linuxDistro = require('./');
 var meow = require('meow');
 
-/**
- * Initialize CLI
- */
-
 meow({
 	help: [
 		'Usage',
@@ -18,10 +14,6 @@ meow({
 		'  Ubuntu 14.04 LTS (trusty)'
 	].join('\n')
 });
-
-/**
- * Run
- */
 
 linuxDistro(function (err, data) {
 	if (err) {

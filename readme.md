@@ -1,4 +1,4 @@
-# linux-distro [![Build Status](https://travis-ci.org/kevva/linux-distro.svg?branch=master)](https://travis-ci.org/kevva/linux-distro)
+# linux-distro [![Build Status](http://img.shields.io/travis/kevva/linux-distro.svg?style=flat)](https://travis-ci.org/kevva/linux-distro)
 
 > Get the current Linux distro
 

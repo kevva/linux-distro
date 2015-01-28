@@ -3,13 +3,6 @@
 var getos = require('getos');
 var execFile = require('child_process').execFile;
 
-/**
- * Get the current Linux distro
- *
- * @param {Function} cb
- * @api public
- */
-
 module.exports = function (cb) {
 	if (process.platform !== 'linux') {
 		throw new Error('Only Linux systems are supported');
@@ -25,7 +18,7 @@ module.exports = function (cb) {
 					return;
 				}
 
-				cb(null, { os: res });
+				cb(null, {os: res});
 			});
 		}
 

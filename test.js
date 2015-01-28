@@ -7,7 +7,7 @@ test('get the current Linux distro', function (t) {
 	t.plan(5);
 
 	linuxDistro(function (err, data) {
-		t.assert(!err);
+		t.assert(!err, err);
 		t.assert(data.os);
 		t.assert(data.name);
 		t.assert(data.release);
