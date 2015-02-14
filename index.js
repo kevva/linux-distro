@@ -2,6 +2,7 @@
 
 var getos = require('getos');
 var execFile = require('child_process').execFile;
+var execFileSync = require('child_process').execFileSync;
 
 module.exports = function (cb) {
 	if (process.platform !== 'linux') {
@@ -31,4 +32,28 @@ module.exports = function (cb) {
 
 		cb(null, obj);
 	});
+};
+
+module.exports.sync = function () {
+	if (process.platform !== 'linux') {
+		throw new Error('Only Linux systems are supported');
+	}
+
+	try {
+		var stdout = execFileSync('lsb_release', ['-a', '--short'], {
+			encoding: 'utf8',
+			stdio: ['pipe', 'pipe', 'ignore']
+		});
+
+		stdout = stdout.split('\n');
+
+		return {
+			os: stdout[0],
+			name: stdout[1],
+			release: stdout[2],
+			code: stdout[3]
+		};
+	} catch (err) {
+		throw err;
+	}
 };
