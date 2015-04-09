@@ -2,11 +2,13 @@
 
 > Get the current Linux distro
 
+
 ## Install
 
-```sh
+```
 $ npm install --save linux-distro
 ```
+
 
 ## Usage
 
@@ -14,10 +16,6 @@ $ npm install --save linux-distro
 var linuxDistro = require('linux-distro');
 
 linuxDistro(function (err, data) {
-	if (err) {
-		throw err;
-	}
-
 	console.log(data.os);
 	//=> Ubuntu
 
@@ -32,19 +30,21 @@ linuxDistro(function (err, data) {
 });
 ```
 
+
 ## CLI
 
-```sh
+```
 $ npm install --global linux-distro
 ```
 
-```sh
+```
 $ linux-distro --help
 
-Example
-  $ linux-distro
-  Ubuntu 14.04 LTS (trusty)
+  Example
+    $ linux-distro
+    Ubuntu 14.04 LTS (trusty)
 ```
+
 
 ## License
 

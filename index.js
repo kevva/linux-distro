@@ -1,8 +1,8 @@
 'use strict';
 
-var getos = require('getos');
 var execFile = require('child_process').execFile;
 var execFileSync = require('child_process').execFileSync;
+var getos = require('getos');
 
 module.exports = function (cb) {
 	if (process.platform !== 'linux') {

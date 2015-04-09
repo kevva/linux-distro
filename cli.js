@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 
-var linuxDistro = require('./');
 var meow = require('meow');
+var linuxDistro = require('./');
 
 meow({
 	help: [
 		'Usage',
-		'  linux-distro',
+		'  $ linux-distro',
 		'',
 		'Example',
-		'  linux-distro',
+		'  $ linux-distro',
 		'  Ubuntu 14.04 LTS (trusty)'
 	].join('\n')
 });
