@@ -1,6 +1,6 @@
 {
   "name": "linux-distro",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Get the current Linux distro",
   "license": "MIT",
   "repository": "kevva/linux-distro",
