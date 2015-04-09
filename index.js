@@ -10,8 +10,6 @@ module.exports = function (cb) {
 	}
 
 	execFile('lsb_release', ['-a', '--short'], function (err, stdout) {
-		var obj = {};
-
 		if (err) {
 			getos(function (err, res) {
 				if (err) {
@@ -19,18 +17,23 @@ module.exports = function (cb) {
 					return;
 				}
 
-				cb(null, {os: res});
+				cb(null, {
+					os: res.dist,
+					name: res.dist + ' ' + res.release,
+					release: res.release,
+					code: res.codename
+				});
 			});
 		}
 
 		stdout = stdout.split('\n');
 
-		obj.os = stdout[0];
-		obj.name = stdout[1];
-		obj.release = stdout[2];
-		obj.code = stdout[3];
-
-		cb(null, obj);
+		cb(null, {
+			os: stdout[0],
+			name: stdout[1],
+			release: stdout[2],
+			code: stdout[3]
+		});
 	});
 };
 

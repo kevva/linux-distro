@@ -28,10 +28,10 @@
     "version"
   ],
   "dependencies": {
-    "getos": "^0.2.1",
-    "meow": "^2.0.0"
+    "getos": "^2.3.0",
+    "meow": "^3.1.0"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "^0.0.4"
   }
 }
