@@ -1,5 +1,4 @@
 'use strict';
-
 var test = require('ava');
 var linuxDistro = require('./');
 
@@ -19,6 +18,7 @@ test('synchronously get the current linux distro', function (t) {
 	t.plan(4);
 
 	var data = linuxDistro.sync();
+
 	t.assert(data.os, data.os);
 	t.assert(data.name, data.name);
 	t.assert(data.release, data.release);
