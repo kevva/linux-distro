@@ -12,7 +12,7 @@ meow({
 		'Example',
 		'  $ linux-distro',
 		'  Ubuntu 14.04 LTS (trusty)'
-	].join('\n')
+	]
 });
 
 linuxDistro(function (err, data) {
