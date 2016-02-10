@@ -22,6 +22,8 @@ module.exports = function (cb) {
 					code: res.codename
 				});
 			});
+
+			return;
 		}
 
 		stdout = stdout.split('\n');
