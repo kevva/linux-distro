@@ -1,38 +1,30 @@
 'use strict';
-var execFile = require('child_process').execFile;
-var getos = require('getos');
+const execa = require('execa');
+const getos = require('getos');
+const pify = require('pify');
 
-module.exports = function (cb) {
+module.exports = () => {
 	if (process.platform !== 'linux') {
-		throw new Error('Only Linux systems are supported');
+		return Promise.reject(new Error('Only Linux systems are supported'));
 	}
 
-	execFile('lsb_release', ['-a', '--short'], function (err, stdout) {
-		if (err) {
-			getos(function (err, res) {
-				if (err) {
-					cb(err);
-					return;
-				}
+	return execa('lsb_release', ['-a', '--short']).then(res => {
+		const stdout = res.stdout.split('\n');
 
-				cb(null, {
-					os: res.dist,
-					name: res.dist + ' ' + res.release,
-					release: res.release,
-					code: res.codename
-				});
-			});
-
-			return;
-		}
-
-		stdout = stdout.split('\n');
-
-		cb(null, {
+		return {
 			os: stdout[0],
 			name: stdout[1],
 			release: stdout[2],
 			code: stdout[3]
+		};
+	}).catch(() => {
+		return pify(getos)(res => {
+			return {
+				os: res.dist,
+				name: `${res.dist} ${res.release}`,
+				release: res.release,
+				code: res.codename
+			};
 		});
 	});
 };

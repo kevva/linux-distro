@@ -13,9 +13,9 @@ $ npm install --save linux-distro
 ## Usage
 
 ```js
-var linuxDistro = require('linux-distro');
+const linuxDistro = require('linux-distro');
 
-linuxDistro(function (err, data) {
+linuxDistro().then(data => {
 	console.log(data);
 	/*
 	{
