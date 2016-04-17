@@ -1,24 +1,15 @@
 #!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var linuxDistro = require('./');
+const meow = require('meow');
+const linuxDistro = require('./');
 
-meow({
-	help: [
-		'Usage',
-		'  $ linux-distro',
-		'',
-		'Example',
-		'  $ linux-distro',
-		'  Ubuntu 14.04 LTS (trusty)'
-	]
-});
+meow(`
+	Usage
+	  $ linux-distro
 
-linuxDistro(function (err, data) {
-	if (err) {
-		console.error(err.message);
-		process.exit(1);
-	}
+	Example
+	  $ linux-distro
+	  Ubuntu 14.04 LTS (trusty)
+`);
 
-	console.log(data.name + ' (' + data.code + ')');
-});
+linuxDistro().then(data => console.log(`${data.name} (${data.code})`));
