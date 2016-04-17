@@ -1,14 +1,11 @@
-'use strict';
-var test = require('ava');
-var linuxDistro = require('./');
+import test from 'ava';
+import fn from './';
 
-test('get the current linux distro', function (t) {
-	t.plan(4);
+test('get the current linux distro', async t => {
+	const data = await fn();
 
-	linuxDistro().then(function (data) {
-		t.assert(data.os, data.os);
-		t.assert(data.name, data.name);
-		t.assert(data.release, data.release);
-		t.assert(data.code, data.code);
-	});
+	t.truthy(data.os);
+	t.truthy(data.name);
+	t.truthy(data.release);
+	t.truthy(data.code);
 });
