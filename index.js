@@ -19,10 +19,10 @@ module.exports = () => {
 	}).catch(() => {
 		return getos().then((res) => {
 			return {
-				os: res.dist,
-				name: `${res.dist} ${res.release}`,
-				release: res.release,
-				code: res.codename
+				os: res.dist || '',
+				name: `${res.dist || ''} ${res.release || ''}`,
+				release: res.release || '',
+				code: res.codename || ''
 			};
 		});
 	});
