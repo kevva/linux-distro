@@ -1,14 +1,13 @@
-'use strict';
 const execa = require('execa');
-const getos = require('getos');
 const pify = require('pify');
+const getos = pify(require('getos'));
 
 module.exports = () => {
 	if (process.platform !== 'linux') {
 		return Promise.reject(new Error('Only Linux systems are supported'));
 	}
 
-	return execa('lsb_release', ['-a', '--short']).then(res => {
+	return execa('lsb_release', ['-a', '--short']).then((res) => {
 		const stdout = res.stdout.split('\n');
 
 		return {
@@ -18,7 +17,7 @@ module.exports = () => {
 			code: stdout[3]
 		};
 	}).catch(() => {
-		return pify(getos)(res => {
+		return getos().then((res) => {
 			return {
 				os: res.dist,
 				name: `${res.dist} ${res.release}`,
