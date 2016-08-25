@@ -18,7 +18,7 @@ module.exports = () => {
 			code: stdout[3]
 		};
 	}).catch(() => {
-		return pify(getos)(res => {
+		return pify(getos).then(res => {
 			return {
 				os: res.dist,
 				name: `${res.dist} ${res.release}`,
