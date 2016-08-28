@@ -23,7 +23,7 @@ module.exports = () => {
 				throw new Error('Your distro couldn\'t be determined');
 			}
 			return {
-				os: res.dist || '',
+				os: res.dist || 'Unknown',
 				name: `${res.dist || ''} ${res.release || ''}`,
 				release: res.release || '',
 				code: res.codename || ''
